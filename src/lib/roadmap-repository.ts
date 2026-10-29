@@ -160,3 +160,35 @@ export function parseSlugId(slugId: string): { slug: string; id: string } | null
     id: slugId.slice(idx + 2),
   };
 }
+
+export interface GraphNode{
+  id:string;
+  icon?:string;
+  type:string;
+  data:{
+    label:string;
+    icon?:string;
+    description:string;
+    detailedDescription:string;
+    timeEstimate:string;
+    nextSteps?:string[];
+    tasks?:string[];
+    references?:Array<{
+      title:string;
+      url:string;
+      snippet:string;
+      relevance:string;
+    }>;
+
+    successStories?:Array<{
+      person:string;
+      achievement:string;
+      summary:string;
+      sourceUrl:string;
+      afterNode:string;
+    }>;
+    recommandationExplanation?:string;
+    [key:string]:unknown;
+  };
+
+}

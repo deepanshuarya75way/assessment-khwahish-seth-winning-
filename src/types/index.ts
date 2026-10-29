@@ -25,6 +25,20 @@ interface NodeData {
     successStories?: SuccessStory[];
 }
 
+interface NodeData{
+    description:string;
+    detailedDescription:string;
+    icon:string;
+    label:string;
+    nextSteps:string[];
+    tasks:string[];
+    timeEstimate:string;
+    references?:NodeReference[];
+    successStories?:SuccessStory[];
+    recommendationExplanation?:string;
+    
+
+}
 export interface MindMapNode {
     id: string;
     type: string;
